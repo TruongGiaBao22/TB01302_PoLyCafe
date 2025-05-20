@@ -64,6 +64,18 @@
     <Compile Include="frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_QuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QuanLyNhanVien.Designer.cs">
+      <DependentUpon>frm_QuanLyNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_QuanLyTheLuuDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QuanLyTheLuuDong.Designer.cs">
+      <DependentUpon>frm_QuanLyTheLuuDong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QuanLyNhanVien.resx">
+      <DependentUpon>frm_QuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QuanLyTheLuuDong.resx">
+      <DependentUpon>frm_QuanLyTheLuuDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_TrangChu.resx">
       <DependentUpon>frm_TrangChu.cs</DependentUpon>

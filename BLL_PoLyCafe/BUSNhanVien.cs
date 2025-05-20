@@ -14,11 +14,27 @@ namespace BLL_PoLyCafe
 
         public NhanVien DangNhap(string username, string password)
         {
-            if(string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 return null;
-            }    
+            }
             return dalNhanVIen.getNhanVien(username, password);
+        }
+        public bool ResetMatKhau(string email, string mk)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(mk))
+                {
+                    return false;
+                }
+                dalNhanVIen.ResetMatKhau(mk, email);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

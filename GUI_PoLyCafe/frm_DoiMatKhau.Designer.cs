@@ -69,6 +69,7 @@
             // 
             this.txtTaiKhoan.Location = new System.Drawing.Point(340, 136);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
+            this.txtTaiKhoan.ReadOnly = true;
             this.txtTaiKhoan.Size = new System.Drawing.Size(476, 20);
             this.txtTaiKhoan.TabIndex = 2;
             // 
@@ -93,6 +94,7 @@
             // 
             this.txtMatKhauCu.Location = new System.Drawing.Point(340, 263);
             this.txtMatKhauCu.Name = "txtMatKhauCu";
+            this.txtMatKhauCu.PasswordChar = '*';
             this.txtMatKhauCu.Size = new System.Drawing.Size(372, 20);
             this.txtMatKhauCu.TabIndex = 6;
             // 
@@ -110,6 +112,7 @@
             // 
             this.txtMatKhauMoi.Location = new System.Drawing.Point(340, 335);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
+            this.txtMatKhauMoi.PasswordChar = '*';
             this.txtMatKhauMoi.Size = new System.Drawing.Size(372, 20);
             this.txtMatKhauMoi.TabIndex = 8;
             // 
@@ -127,6 +130,7 @@
             // 
             this.txtXacNhanMatKhau.Location = new System.Drawing.Point(340, 400);
             this.txtXacNhanMatKhau.Name = "txtXacNhanMatKhau";
+            this.txtXacNhanMatKhau.PasswordChar = '*';
             this.txtXacNhanMatKhau.Size = new System.Drawing.Size(372, 20);
             this.txtXacNhanMatKhau.TabIndex = 10;
             // 
@@ -149,6 +153,7 @@
             this.ckbMKC.TabIndex = 11;
             this.ckbMKC.Text = "Hiển Thị ";
             this.ckbMKC.UseVisualStyleBackColor = true;
+            this.ckbMKC.CheckedChanged += new System.EventHandler(this.ckbMKC_CheckedChanged);
             // 
             // ckbMKM
             // 
@@ -159,6 +164,7 @@
             this.ckbMKM.TabIndex = 12;
             this.ckbMKM.Text = "Hiển Thị ";
             this.ckbMKM.UseVisualStyleBackColor = true;
+            this.ckbMKM.CheckedChanged += new System.EventHandler(this.ckbMKM_CheckedChanged);
             // 
             // ckbXNMK
             // 
@@ -169,6 +175,7 @@
             this.ckbXNMK.TabIndex = 13;
             this.ckbXNMK.Text = "Hiển Thị ";
             this.ckbXNMK.UseVisualStyleBackColor = true;
+            this.ckbXNMK.CheckedChanged += new System.EventHandler(this.ckbXNMK_CheckedChanged);
             // 
             // btnDoiMatKhau
             // 
@@ -178,6 +185,7 @@
             this.btnDoiMatKhau.TabIndex = 14;
             this.btnDoiMatKhau.Text = "Đổi Mật Khẩu";
             this.btnDoiMatKhau.UseVisualStyleBackColor = true;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // frm_DoiMatKhau
             // 
@@ -201,6 +209,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_DoiMatKhau";
             this.Text = "frm_DoiMatKhau";
+            this.Load += new System.EventHandler(this.frm_DoiMatKhau_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

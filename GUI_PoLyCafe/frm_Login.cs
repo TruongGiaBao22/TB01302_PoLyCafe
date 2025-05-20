@@ -43,7 +43,7 @@ namespace GUI_PoLyCafe
                     return;
                 }
                 AuthUtil.user = nv;
-                frm_DoiMatKhau main = new frm_DoiMatKhau();
+                frm_TrangChu main = new frm_TrangChu();
                 main.Show();
                 this.Hide();
             }
@@ -55,6 +55,11 @@ namespace GUI_PoLyCafe
             {
                 e.Cancel = true;
             }
+        }
+
+        private void chkHienThiMK_CheckedChanged(object sender, EventArgs e)
+        {
+            txtMatKhau.PasswordChar = chkHienThiMK.Checked ? '\0':'*';
         }
     }
 }

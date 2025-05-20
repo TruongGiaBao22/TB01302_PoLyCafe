@@ -33,11 +33,11 @@
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.rdoNhoMatKhau = new System.Windows.Forms.RadioButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chkHienThiMK = new System.Windows.Forms.CheckBox();
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -85,21 +85,9 @@
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(609, 285);
             this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(249, 20);
             this.txtMatKhau.TabIndex = 5;
-            // 
-            // rdoNhoMatKhau
-            // 
-            this.rdoNhoMatKhau.AutoSize = true;
-            this.rdoNhoMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.rdoNhoMatKhau.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.rdoNhoMatKhau.Location = new System.Drawing.Point(475, 349);
-            this.rdoNhoMatKhau.Name = "rdoNhoMatKhau";
-            this.rdoNhoMatKhau.Size = new System.Drawing.Size(121, 22);
-            this.rdoNhoMatKhau.TabIndex = 6;
-            this.rdoNhoMatKhau.TabStop = true;
-            this.rdoNhoMatKhau.Text = "Nhớ Mật Khẩu";
-            this.rdoNhoMatKhau.UseVisualStyleBackColor = true;
             // 
             // linkLabel1
             // 
@@ -144,15 +132,28 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // chkHienThiMK
+            // 
+            this.chkHienThiMK.AutoSize = true;
+            this.chkHienThiMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.chkHienThiMK.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.chkHienThiMK.Location = new System.Drawing.Point(475, 349);
+            this.chkHienThiMK.Name = "chkHienThiMK";
+            this.chkHienThiMK.Size = new System.Drawing.Size(144, 21);
+            this.chkHienThiMK.TabIndex = 10;
+            this.chkHienThiMK.Text = "Hiển Thị Mật Khẩu";
+            this.chkHienThiMK.UseVisualStyleBackColor = true;
+            this.chkHienThiMK.CheckedChanged += new System.EventHandler(this.chkHienThiMK_CheckedChanged);
+            // 
             // frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(987, 590);
+            this.Controls.Add(this.chkHienThiMK);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.rdoNhoMatKhau);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTenDangNhap);
@@ -178,10 +179,10 @@
         private System.Windows.Forms.TextBox txtTenDangNhap;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtMatKhau;
-        private System.Windows.Forms.RadioButton rdoNhoMatKhau;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.CheckBox chkHienThiMK;
     }
 }
 
