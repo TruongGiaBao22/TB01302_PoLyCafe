@@ -53,6 +53,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkSalmon;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nhanVienToolStripMenuItem,
@@ -198,6 +199,10 @@
             // 
             // pnMain
             // 
+            this.pnMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnMain.BackColor = System.Drawing.Color.AntiqueWhite;
             this.pnMain.Location = new System.Drawing.Point(0, 32);
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(1114, 648);

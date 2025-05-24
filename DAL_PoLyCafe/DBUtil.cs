@@ -11,7 +11,8 @@ namespace DAL_PoLyCafe
 {
     internal class DBUtil
     {
-        public static string connString = @"Data Source=TRUONGBAO\SQLEXPRESS;Initial Catalog=SOF2052_PolyCafe;Integrated Security=True;TrustServerCertificate=True";
+        //public static string connString = @"Data Source=TRUONGBAO\SQLEXPRESS;Initial Catalog=SOF2052_PolyCafe;Integrated Security=True;TrustServerCertificate=True";
+        public static string connString = @"Data Source=TRUONGBAO\SQLEXPRESS;Initial Catalog=PolyCafe;Integrated Security=True;TrustServerCertificate=True";
         public static SqlCommand GetCommand(string sql, List<Object> args, CommandType cmdType)
         {
             SqlConnection conn = new SqlConnection(connString);
@@ -84,6 +85,19 @@ namespace DAL_PoLyCafe
                 }
 
                 return default;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public static object ScalarQuery(string sql, List<object> args, CommandType cmdType = CommandType.Text)
+        {
+            try
+            {
+                SqlCommand cmd = GetCommand(sql, args, cmdType);
+                cmd.Connection.Open();
+                return cmd.ExecuteScalar();
             }
             catch (Exception)
             {

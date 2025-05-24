@@ -151,5 +151,17 @@
   <ItemGroup>
     <None Include="Resources\Screenshot 2025-05-10 135544.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-22 135609.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-22 135953.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cheerful_Bee_Enjoying_Coffee-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-22 140416.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

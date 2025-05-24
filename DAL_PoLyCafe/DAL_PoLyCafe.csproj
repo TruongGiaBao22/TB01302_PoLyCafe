@@ -155,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DALNhanVien.cs" />
+    <Compile Include="DAL_TheLuuDong.cs" />
     <Compile Include="DBUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

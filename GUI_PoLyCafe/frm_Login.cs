@@ -30,6 +30,7 @@ namespace GUI_PoLyCafe
         {
             string username = txtTenDangNhap.Text;
             string password = txtMatKhau.Text;
+
             NhanVien nv = busNhanVien.DangNhap(username, password);
             if (nv == null)
             {
@@ -60,6 +61,29 @@ namespace GUI_PoLyCafe
         private void chkHienThiMK_CheckedChanged(object sender, EventArgs e)
         {
             txtMatKhau.PasswordChar = chkHienThiMK.Checked ? '\0':'*';
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn muốn thoát khỏi chương trình", "Thoát",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question
+               );
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frm_Login_Load(object sender, EventArgs e)
+        {
+            txtTenDangNhap.Text = "hoa.nguyen@cafe.com";
+            txtMatKhau.Text = "password1";
         }
     }
 }

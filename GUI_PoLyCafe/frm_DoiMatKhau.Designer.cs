@@ -179,18 +179,20 @@
             // 
             // btnDoiMatKhau
             // 
+            this.btnDoiMatKhau.BackColor = System.Drawing.Color.Green;
             this.btnDoiMatKhau.Location = new System.Drawing.Point(163, 495);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.Size = new System.Drawing.Size(653, 55);
             this.btnDoiMatKhau.TabIndex = 14;
             this.btnDoiMatKhau.Text = "Đổi Mật Khẩu";
-            this.btnDoiMatKhau.UseVisualStyleBackColor = true;
+            this.btnDoiMatKhau.UseVisualStyleBackColor = false;
             this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // frm_DoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(1054, 678);
             this.Controls.Add(this.btnDoiMatKhau);
             this.Controls.Add(this.ckbXNMK);

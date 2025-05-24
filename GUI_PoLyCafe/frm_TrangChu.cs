@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UTIL_PoLyCafe;
 
 namespace GUI_PoLyCafe
 {
@@ -15,6 +16,7 @@ namespace GUI_PoLyCafe
         public frm_TrangChu()
         {
             InitializeComponent();
+            Checkpermission();
         }
 
         private void doiMatKhauToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,6 +50,41 @@ namespace GUI_PoLyCafe
         private void quanLyTheLuuDongToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildFrom( new frm_QuanLyTheLuuDong());
+        }
+        private void VaiTroNhanVien()
+        {
+            nhanVienToolStripMenuItem.Visible = false;
+            thongKeToolStripMenuItem.Visible = false;
+            
+        }
+
+        private void Checkpermission()
+        {
+            if (AuthUtil.IsLogin())
+            {
+                nhanVienToolStripMenuItem.Visible = true;
+                sanPhamToolStripMenuItem.Visible = true;
+                phieuToolStripMenuItem.Visible = true;
+                theLuuDongToolStripMenuItem.Visible = true;
+                thongKeToolStripMenuItem.Visible = true;
+                heThongToolStripMenuItem.Visible = true;
+                if (AuthUtil.user.VaiTro == false)
+                {
+                    VaiTroNhanVien();
+                }
+
+            }
+            else
+            {
+                heThongToolStripMenuItem.Visible=true;
+                nhanVienToolStripMenuItem.Visible=false;
+                sanPhamToolStripMenuItem.Visible = false;
+                phieuToolStripMenuItem.Visible=false;
+                theLuuDongToolStripMenuItem.Visible=false;
+                thongKeToolStripMenuItem.Visible=false;
+                heThongToolStripMenuItem .Visible=false;
+
+            }
         }
     }
 }
