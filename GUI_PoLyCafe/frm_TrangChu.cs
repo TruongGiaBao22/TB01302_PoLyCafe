@@ -86,5 +86,10 @@ namespace GUI_PoLyCafe
 
             }
         }
+
+        private void quanLySanPhamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildFrom(new frm_QuanLySanPham());
+        }
     }
 }

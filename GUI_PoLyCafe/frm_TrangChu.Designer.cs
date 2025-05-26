@@ -103,6 +103,7 @@
             this.quanLySanPhamToolStripMenuItem.Name = "quanLySanPhamToolStripMenuItem";
             this.quanLySanPhamToolStripMenuItem.Size = new System.Drawing.Size(231, 24);
             this.quanLySanPhamToolStripMenuItem.Text = "Quản Lý Sản Phẩm";
+            this.quanLySanPhamToolStripMenuItem.Click += new System.EventHandler(this.quanLySanPhamToolStripMenuItem_Click);
             // 
             // phieuToolStripMenuItem
             // 
