@@ -97,6 +97,7 @@
             this.quanLyLoaiSanPhamToolStripMenuItem.Name = "quanLyLoaiSanPhamToolStripMenuItem";
             this.quanLyLoaiSanPhamToolStripMenuItem.Size = new System.Drawing.Size(231, 24);
             this.quanLyLoaiSanPhamToolStripMenuItem.Text = "Quản Lý Loại Sản Phẩm";
+            this.quanLyLoaiSanPhamToolStripMenuItem.Click += new System.EventHandler(this.quanLyLoaiSanPhamToolStripMenuItem_Click);
             // 
             // quanLySanPhamToolStripMenuItem
             // 

@@ -91,5 +91,10 @@ namespace GUI_PoLyCafe
         {
             openChildFrom(new frm_QuanLySanPham());
         }
+
+        private void quanLyLoaiSanPhamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildFrom( new frm_LoaiSanPham() );
+        }
     }
 }

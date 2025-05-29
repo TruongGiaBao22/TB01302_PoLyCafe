@@ -12,8 +12,8 @@ namespace DTO_PoLyCafe
         public string TenSanPham { get; set; }
         public decimal DonGia { get; set; }
         public string MaLoai { get; set; }
-        public string TenLoai { get; set; }
         public string HinhAnh {  get; set; }
         public bool TrangThai { get; set; }
+        public string TrangThaiText => TrangThai ? "Đang Hoạt Động" : "Không Hoạt Động";
     }
 }
