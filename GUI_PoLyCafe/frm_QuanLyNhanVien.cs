@@ -50,7 +50,38 @@ namespace GUI_PoLyCafe
             BUSNhanVien busNhanVien = new BUSNhanVien();
             drvDanhSachNV.DataSource = null; // Xóa du Liệu cũ
             drvDanhSachNV.DataSource = busNhanVien.GetNhanVienList();
+            drvDanhSachNV.Columns["MaNhanVien"].HeaderText = "Mã Nhân Viên ";
+            drvDanhSachNV.Columns["HoTen"].HeaderText = "Họ Tên";
+            drvDanhSachNV.Columns["Email"].HeaderText = "Email";
+            drvDanhSachNV.Columns["MatKhau"].HeaderText = "Mật Khẩu";
+            drvDanhSachNV.Columns["VaiTroText"].HeaderText = "Vai Trò";
+            drvDanhSachNV.Columns["TrangThaiText"].HeaderText = "Trạng Thái";
+            drvDanhSachNV.Columns["VaiTro"].Visible = false;
+            drvDanhSachNV.Columns["TrangThai"].Visible = false;
+
+            drvDanhSachNV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            drvDanhSachNV.ColumnHeadersHeight = 40;
+            drvDanhSachNV.RowTemplate.Height = 40;
         }
+
+      
+        private void ClearForm()
+        {
+            txtMaNV.Enabled = true;
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = false;
+            txtMaNV.Clear();
+            txtHoTen.Clear();
+            txtEmail.Clear();
+            txtMatKhau.Clear();
+            rdoNhanVien.Checked = true;
+        }
+
+
+        
+
+       
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -103,18 +134,6 @@ namespace GUI_PoLyCafe
             {
                 MessageBox.Show("Loi: " + ex.Message, "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void ClearForm()
-        {
-            txtMaNV.Enabled = true;
-            btnThem.Enabled = true;
-            btnSua.Enabled = true;
-            btnXoa.Enabled = false;
-            txtMaNV.Clear();
-            txtHoTen.Clear();
-            txtEmail.Clear();
-            txtMatKhau.Clear();
-            rdoNhanVien.Checked = true;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -215,17 +234,10 @@ namespace GUI_PoLyCafe
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             LoadNhanVien();
-            drvDanhSachNV.Columns["MaNhanVien"].HeaderText = "Mã Nhân Viên ";
-            drvDanhSachNV.Columns["HoTen"].HeaderText = "Họ Tên";
-            drvDanhSachNV.Columns["Email"].HeaderText = "Email";
-            drvDanhSachNV.Columns["MatKhau"].HeaderText = "Mật Khẩu";
-            drvDanhSachNV.Columns["VaiTroText"].HeaderText = "Vai Trò";
-            drvDanhSachNV.Columns["TrangThaiText"].HeaderText = "Trạng Thái";
-            drvDanhSachNV.Columns["VaiTro"].Visible = false;
-            drvDanhSachNV.Columns["TrangThai"].Visible = false;
+            ClearForm();
         }
 
-        private void drvDanhSachNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void drvDanhSachNV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = drvDanhSachNV.Rows[e.RowIndex];
             txtMaNV.Text = row.Cells["MaNhanVien"].Value.ToString();

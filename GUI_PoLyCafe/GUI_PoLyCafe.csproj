@@ -76,6 +76,18 @@
     <Compile Include="frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_MainSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MainSanPham.Designer.cs">
+      <DependentUpon>frm_MainSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MainTrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MainTrangChu.Designer.cs">
+      <DependentUpon>frm_MainTrangChu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_QuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MainSanPham.resx">
+      <DependentUpon>frm_MainSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MainTrangChu.resx">
+      <DependentUpon>frm_MainTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_QuanLyNhanVien.resx">
       <DependentUpon>frm_QuanLyNhanVien.cs</DependentUpon>
@@ -187,6 +205,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Screenshot 2025-05-22 140416.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\team.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checklist %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_2025-05-31_141245-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

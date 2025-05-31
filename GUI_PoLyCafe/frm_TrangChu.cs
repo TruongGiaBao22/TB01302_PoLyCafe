@@ -53,21 +53,21 @@ namespace GUI_PoLyCafe
         }
         private void VaiTroNhanVien()
         {
-            nhanVienToolStripMenuItem.Visible = false;
-            thongKeToolStripMenuItem.Visible = false;
-            
+            btnNhanVien.Visible = false;
+            btnThongke.Visible = false;
+
         }
 
         private void Checkpermission()
         {
             if (AuthUtil.IsLogin())
             {
-                nhanVienToolStripMenuItem.Visible = true;
-                sanPhamToolStripMenuItem.Visible = true;
-                phieuToolStripMenuItem.Visible = true;
-                theLuuDongToolStripMenuItem.Visible = true;
-                thongKeToolStripMenuItem.Visible = true;
-                heThongToolStripMenuItem.Visible = true;
+                btnNhanVien.Visible = true;
+                btnSanPham.Visible = true;
+                btnPhieuBanHang.Visible = true;
+                btnTLD.Visible = true;
+                btnThongke.Visible = true;
+                btnHeThong.Visible = true;
                 if (AuthUtil.user.VaiTro == false)
                 {
                     VaiTroNhanVien();
@@ -76,13 +76,13 @@ namespace GUI_PoLyCafe
             }
             else
             {
-                heThongToolStripMenuItem.Visible=true;
-                nhanVienToolStripMenuItem.Visible=false;
-                sanPhamToolStripMenuItem.Visible = false;
-                phieuToolStripMenuItem.Visible=false;
-                theLuuDongToolStripMenuItem.Visible=false;
-                thongKeToolStripMenuItem.Visible=false;
-                heThongToolStripMenuItem .Visible=false;
+                btnHeThong.Visible = true;
+                btnNhanVien.Visible = false;
+                btnSanPham.Visible = false;
+                btnPhieuBanHang.Visible = false;
+                btnTLD.Visible = false;
+                btnThongke.Visible = false;
+                btnHeThong.Visible = false;
 
             }
         }
@@ -95,6 +95,57 @@ namespace GUI_PoLyCafe
         private void quanLyLoaiSanPhamToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildFrom( new frm_LoaiSanPham() );
+        }
+
+        private void pnMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            openChildFrom(new frm_QuanLyNhanVien());
+        }
+
+        private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            openChildFrom(new frm_MainSanPham());
+        }
+
+        private void btnTLD_Click(object sender, EventArgs e)
+        {
+            openChildFrom( new frm_QuanLyTheLuuDong() );
+        }
+
+        private void btnHeThong_Click(object sender, EventArgs e)
+        {
+            openChildFrom(new frm_DoiMatKhau());
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            openChildFrom(new frm_MainTrangChu());
+        }
+
+        private void btnThongke_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            // Hiện hộp thoại xác nhận
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất không?",
+                                                  "Xác nhận đăng xuất",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                frm_Login frm = new frm_Login();
+                frm.ShowDialog(); // Chờ đến khi login đóng
+                this.Close();     // Sau đó đóng form hiện tại
+            }
         }
     }
 }
