@@ -119,7 +119,7 @@ namespace GUI_PoLyCafe
 
         private void btnHeThong_Click(object sender, EventArgs e)
         {
-            openChildFrom(new frm_DoiMatKhau());
+            openChildFrom(new frm_MainHeThong());
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -146,6 +146,11 @@ namespace GUI_PoLyCafe
                 frm.ShowDialog(); // Chờ đến khi login đóng
                 this.Close();     // Sau đó đóng form hiện tại
             }
+        }
+
+        private void btnPhieuBanHang_Click(object sender, EventArgs e)
+        {
+            openChildFrom ( new frm_DonHang());
         }
     }
 }

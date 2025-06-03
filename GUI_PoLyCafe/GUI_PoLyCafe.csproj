@@ -58,11 +58,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_ChiTietPhieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ChiTietPhieu.Designer.cs">
+      <DependentUpon>frm_ChiTietPhieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_DoiMatKhau.Designer.cs">
       <DependentUpon>frm_DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_DonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DonHang.Designer.cs">
+      <DependentUpon>frm_DonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_HDSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_HDSD.Designer.cs">
+      <DependentUpon>frm_HDSD.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_LoaiSanPham.cs">
       <SubType>Form</SubType>
@@ -75,6 +93,12 @@
     </Compile>
     <Compile Include="frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MainHeThong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MainHeThong.Designer.cs">
+      <DependentUpon>frm_MainHeThong.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_MainSanPham.cs">
       <SubType>Form</SubType>
@@ -112,6 +136,7 @@
     <Compile Include="frm_TrangChu.Designer.cs">
       <DependentUpon>frm_TrangChu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\ImageUtil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frm_XinChao.cs">
@@ -120,14 +145,26 @@
     <Compile Include="frm_XinChao.Designer.cs">
       <DependentUpon>frm_XinChao.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frm_ChiTietPhieu.resx">
+      <DependentUpon>frm_ChiTietPhieu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_DoiMatKhau.resx">
       <DependentUpon>frm_DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DonHang.resx">
+      <DependentUpon>frm_DonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_HDSD.resx">
+      <DependentUpon>frm_HDSD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_LoaiSanPham.resx">
       <DependentUpon>frm_LoaiSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MainHeThong.resx">
+      <DependentUpon>frm_MainHeThong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MainSanPham.resx">
       <DependentUpon>frm_MainSanPham.cs</DependentUpon>
@@ -238,6 +275,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-guide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset-password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\noimage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

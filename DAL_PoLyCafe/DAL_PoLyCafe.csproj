@@ -155,7 +155,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DALNhanVien.cs" />
+    <Compile Include="DAL_ChiTietPhieu.cs" />
     <Compile Include="DAL_LoaiSanPham.cs" />
+    <Compile Include="DAL_PhieuBanHang.cs" />
     <Compile Include="DAL_SanPham.cs" />
     <Compile Include="DAL_TheLuuDong.cs" />
     <Compile Include="DBUtil.cs" />

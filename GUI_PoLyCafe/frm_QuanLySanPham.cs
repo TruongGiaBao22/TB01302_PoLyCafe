@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
@@ -30,6 +31,7 @@ namespace GUI_PoLyCafe
             txtGia.Clear();
             txtTimKiem.Clear();
             rdoDHD.Checked = true;
+            pbHinhAnh.Image = null;
             
         }
 
@@ -105,6 +107,7 @@ namespace GUI_PoLyCafe
                     MessageBox.Show("Đơn giá không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                string savedPath = ImageUtil.SaveImage(pbHinhAnh.Image, "Uploads/SanPham");
 
                 // Tạo đối tượng sản phẩm
                 SanPham sp = new SanPham
@@ -113,7 +116,7 @@ namespace GUI_PoLyCafe
                     DonGia = donGia,
                     MaLoai = maLoai,
                     TrangThai = trangThai,
-                    HinhAnh = ""
+                    HinhAnh = savedPath,
                 };
 
                 // Thêm sản phẩm vào cơ sở dữ liệu
@@ -174,7 +177,11 @@ namespace GUI_PoLyCafe
 
                 if (string.IsNullOrEmpty(kq))
                 {
-
+                    if(pbHinhAnh.Image != null)
+                    {
+                        pbHinhAnh.Image.Dispose();
+                        pbHinhAnh.Image = null;
+                    }
                     MessageBox.Show($"Xóa thông tin sản phẩm {maSP} - {tenSP} thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearForm();
@@ -268,6 +275,10 @@ namespace GUI_PoLyCafe
             txtTenSP.Text = row.Cells["TenSanPham"].Value.ToString();
             txtGia.Text = row.Cells["DonGia"].Value.ToString();
             cobLoaiSP.SelectedValue = row.Cells["MaLoai"].Value.ToString();
+
+            string path = Path.Combine(Application.StartupPath, row.Cells["HinhAnh"].Value.ToString());
+            pbHinhAnh.Image = ImageUtil.LoadImage(path);
+            pbHinhAnh.Tag = path;
             bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
             if (rdoDHD.Checked)
             {
@@ -281,6 +292,17 @@ namespace GUI_PoLyCafe
             btnThem.Enabled = false;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
+        }
+
+        private void btnChonAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pbHinhAnh.Image = Image.FromFile(openFileDialog.FileName);
+            }
         }
     }
 }

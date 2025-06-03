@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnMain = new System.Windows.Forms.Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnPhieuBanHang = new Guna.UI2.WinForms.Guna2Button();
             this.btnThongke = new Guna.UI2.WinForms.Guna2Button();
@@ -38,10 +39,9 @@
             this.btnSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.btnNhanVien = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnMain.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnMain
@@ -56,6 +56,17 @@
             this.pnMain.Size = new System.Drawing.Size(1114, 648);
             this.pnMain.TabIndex = 1;
             this.pnMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMain_Paint);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::GUI_PoLyCafe.Properties.Resources.Screenshot_2025_05_31_141245_removebg_preview;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(1108, 645);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 1;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // guna2Panel1
             // 
@@ -93,6 +104,7 @@
             this.btnPhieuBanHang.Size = new System.Drawing.Size(169, 64);
             this.btnPhieuBanHang.TabIndex = 7;
             this.btnPhieuBanHang.Text = "Phiếu Bán Hàng ";
+            this.btnPhieuBanHang.Click += new System.EventHandler(this.btnPhieuBanHang_Click);
             // 
             // btnThongke
             // 
@@ -241,17 +253,6 @@
             this.guna2Button1.Text = "Trang Chủ";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::GUI_PoLyCafe.Properties.Resources.Screenshot_2025_05_31_141245_removebg_preview;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(1108, 645);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 1;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // frm_TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,8 +264,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang Chủ";
             this.pnMain.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
