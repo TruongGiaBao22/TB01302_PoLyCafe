@@ -26,7 +26,7 @@ namespace GUI_PoLyCafe
             btnXoa.Enabled = true;
             txtMaThe.Clear();
             txtCSH.Clear();
-            chkDHD.Checked = true;
+            rdoDHD.Checked = true;
         }
 
         private void frm_QuanLyTheLuuDong_Load(object sender, EventArgs e)
@@ -44,34 +44,32 @@ namespace GUI_PoLyCafe
             drvDanhSach.Columns["ChuSoHuu"].HeaderText = "Chủ Sỡ Hữu";
             drvDanhSach.Columns["TrangThaiText"].HeaderText = "Trạng Thái";
             drvDanhSach.Columns["TrangThai"].Visible = false;
+
+
+            drvDanhSach.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            drvDanhSach.ColumnHeadersHeight = 40;
+            drvDanhSach.RowTemplate.Height = 40;
         }
 
-        private void drvDanhSach_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        
+
+        
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = drvDanhSach.Rows[e.RowIndex];
-            // Đổ dữ liệu vào các ô nhập liệu trên form
-            txtMaThe.Text = row.Cells["MaThe"].Value.ToString();
-            txtCSH.Text = row.Cells["ChuSoHuu"].Value.ToString();
-
-            bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
-            chkDHD.Checked = trangThai;
-
-            // Bật nút "Sửa"
-            btnThem.Enabled = false;
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            // Tắt chỉnh sửa mã thẻ
-            txtMaThe.Enabled = false;
+            ClearForm();
+            LoadTheLuuDong();
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
             string maThe = txtMaThe.Text.Trim();
             string chuSoHuu = txtCSH.Text.Trim();
 
             bool trangThai;
 
-            if (chkDHD.Checked)
+            if (rdoDHD.Checked)
             {
                 trangThai = true;
             }
@@ -106,7 +104,7 @@ namespace GUI_PoLyCafe
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnXoa_Click_1(object sender, EventArgs e)
         {
             string maThe = txtMaThe.Text.Trim();
             string chuSoHuu = txtCSH.Text.Trim();
@@ -154,14 +152,14 @@ namespace GUI_PoLyCafe
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnSua_Click_1(object sender, EventArgs e)
         {
             string maThe = txtMaThe.Text.Trim();
             string chuSoHuu = txtCSH.Text.Trim();
 
             bool trangThai;
 
-            if (chkDHD.Checked)
+            if (rdoDHD.Checked)
             {
                 trangThai = true;
             }
@@ -195,10 +193,66 @@ namespace GUI_PoLyCafe
             }
         }
 
-        private void btnLamMoi_Click(object sender, EventArgs e)
+        private void btnLamMoi_Click_1(object sender, EventArgs e)
         {
             ClearForm();
             LoadTheLuuDong();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string key = txtTimKiem.Text;
+            if (!string.IsNullOrWhiteSpace(key))
+            {
+                SearchInAllCells(key);
+            }
+            ClearForm();
+        }
+        private void SearchInAllCells(string keyword)
+        {
+            foreach (DataGridViewRow row in drvDanhSach.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(keyword.ToLower()))
+                    {
+
+                        row.Selected = true;
+                        break;
+                    }
+                    else
+                    {
+                        row.Selected = false;
+                    }
+                }
+            }
+        }
+
+        private void drvDanhSach_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row =drvDanhSach.Rows[e.RowIndex];
+
+            // Fill dữ liệu vào các TextBox
+            txtMaThe.Text = row.Cells["MaThe"].Value?.ToString();
+            txtCSH.Text = row.Cells["ChuSoHuu"].Value?.ToString();
+
+            // Xử lý trạng thái (giả sử giá trị là "Đang Hoạt Động" hoặc "Không Hoạt Động")
+            string trangThai = row.Cells["TrangThai"].Value?.ToString();
+
+            if (trangThai == "Đang Hoạt Động")
+            {
+                rdoDHD.Checked = true;
+            }
+            else if (trangThai == "Không Hoạt Động")
+            {
+                rdoKHD.Checked = true;
+            }
+            // Bật nút "Sửa"
+            btnThem.Enabled = false;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            // Tắt chỉnh sửa mã thẻ
+            txtMaThe.Enabled = false;
         }
     }
 }

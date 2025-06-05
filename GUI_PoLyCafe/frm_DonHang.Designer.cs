@@ -70,9 +70,10 @@
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.Location = new System.Drawing.Point(998, 72);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(74, 29);
+            this.btnTimKiem.Size = new System.Drawing.Size(88, 29);
             this.btnTimKiem.TabIndex = 20;
-            this.btnTimKiem.Text = "Làm Mới";
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 

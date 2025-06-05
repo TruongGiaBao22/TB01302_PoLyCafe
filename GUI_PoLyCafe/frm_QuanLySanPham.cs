@@ -32,7 +32,7 @@ namespace GUI_PoLyCafe
             txtTimKiem.Clear();
             rdoDHD.Checked = true;
             pbHinhAnh.Image = null;
-            
+
         }
 
         private void LoatLSP()
@@ -177,7 +177,7 @@ namespace GUI_PoLyCafe
 
                 if (string.IsNullOrEmpty(kq))
                 {
-                    if(pbHinhAnh.Image != null)
+                    if (pbHinhAnh.Image != null)
                     {
                         pbHinhAnh.Image.Dispose();
                         pbHinhAnh.Image = null;
@@ -302,6 +302,35 @@ namespace GUI_PoLyCafe
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 pbHinhAnh.Image = Image.FromFile(openFileDialog.FileName);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string key = txtTimKiem.Text;
+            if (!string.IsNullOrWhiteSpace(key))
+            {
+                SearchInAllCells(key);
+            }
+            ClearForm();
+        }
+        private void SearchInAllCells(string keyword)
+        {
+            foreach (DataGridViewRow row in drvDanhSachSP.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(keyword.ToLower()))
+                    {
+
+                        row.Selected = true;
+                        break;
+                    }
+                    else
+                    {
+                        row.Selected = false;
+                    }
+                }
             }
         }
     }

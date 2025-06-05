@@ -16,7 +16,7 @@ namespace GUI_PoLyCafe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_XinChao());
+            Application.Run(new frm_Login());
         }
     }
 }

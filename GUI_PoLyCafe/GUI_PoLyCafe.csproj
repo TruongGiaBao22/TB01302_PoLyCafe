@@ -41,6 +41,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +64,12 @@
     </Compile>
     <Compile Include="frm_ChiTietPhieu.Designer.cs">
       <DependentUpon>frm_ChiTietPhieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_DoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DoanhThu.Designer.cs">
+      <DependentUpon>frm_DoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_DoiMatKhau.cs">
       <SubType>Form</SubType>
@@ -130,11 +137,23 @@
     <Compile Include="frm_QuanLyTheLuuDong.Designer.cs">
       <DependentUpon>frm_QuanLyTheLuuDong.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_ThongKeSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ThongKeSP.Designer.cs">
+      <DependentUpon>frm_ThongKeSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_TrangChu.Designer.cs">
       <DependentUpon>frm_TrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frn_MainThongke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frn_MainThongke.Designer.cs">
+      <DependentUpon>frn_MainThongke.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\ImageUtil.cs" />
     <Compile Include="Program.cs" />
@@ -147,6 +166,9 @@
     </Compile>
     <EmbeddedResource Include="frm_ChiTietPhieu.resx">
       <DependentUpon>frm_ChiTietPhieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DoanhThu.resx">
+      <DependentUpon>frm_DoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_DoiMatKhau.resx">
       <DependentUpon>frm_DoiMatKhau.cs</DependentUpon>
@@ -181,8 +203,14 @@
     <EmbeddedResource Include="frm_QuanLyTheLuuDong.resx">
       <DependentUpon>frm_QuanLyTheLuuDong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_ThongKeSP.resx">
+      <DependentUpon>frm_ThongKeSP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_TrangChu.resx">
       <DependentUpon>frm_TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frn_MainThongke.resx">
+      <DependentUpon>frn_MainThongke.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -32,7 +32,7 @@ namespace GUI_PoLyCafe
             rdoDXT.Enabled = true;
             rdoDTT.Enabled = true;
             dtpNgayTao.Value = DateTime.Now;
-           rdoDXT.Checked = true;
+            rdoDXT.Checked = true;
         }
         private void LoadNhanVien()
         {
@@ -68,7 +68,7 @@ namespace GUI_PoLyCafe
             cobMaThe.DisplayMember = "ChuSoHuu";
             isLoadingTheLuuDongData = false;
         }
-        
+
 
         private void LoadDanhSachPhieu(string maThe)
         {
@@ -97,7 +97,8 @@ namespace GUI_PoLyCafe
                 drvDanhSachPBH.Columns.Add(buttonColumn);
             }
             drvDanhSachPBH.Columns["ThanhToan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            drvDanhSachPBH.RowTemplate.Height = 50;
+            drvDanhSachPBH.ColumnHeadersHeight = 40;
+            drvDanhSachPBH.RowTemplate.Height = 40;
 
             drvDanhSachPBH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
@@ -332,6 +333,34 @@ namespace GUI_PoLyCafe
             LoadTheLuuDong();
             LoadNhanVien();
             LoadDanhSachPhieu("");
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string key = txtTimKiem.Text;
+            if (!string.IsNullOrWhiteSpace(key))
+            {
+                SearchInAllCells(key);
+            }
+            ClearForm("");
+        }
+        private void SearchInAllCells(string keyword)
+        {
+            foreach (DataGridViewRow row in drvDanhSachPBH.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(keyword.ToLower()))
+                    {
+
+                        row.Selected = true;
+                        break;
+                    }
+                    else
+                    {
+                        row.Selected = false;
+                    }
+                }
+            }
         }
     }
 }

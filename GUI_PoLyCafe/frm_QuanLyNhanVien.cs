@@ -264,5 +264,34 @@ namespace GUI_PoLyCafe
                 rdoKHD.Checked = true;
             }
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string key = txtTimKiem.Text;
+            if (!string.IsNullOrWhiteSpace(key))
+            {
+                SearchInAllCells(key);
+            }
+            ClearForm();
+        }
+        private void SearchInAllCells(string keyword)
+        {
+            foreach (DataGridViewRow row in drvDanhSachNV.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(keyword.ToLower()))
+                    {
+
+                        row.Selected = true;
+                        break;
+                    }
+                    else
+                    {
+                        row.Selected = false;
+                    }
+                }
+            }
+        }
     }
 }

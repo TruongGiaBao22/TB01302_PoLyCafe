@@ -129,6 +129,7 @@ namespace GUI_PoLyCafe
 
         private void btnThongke_Click(object sender, EventArgs e)
         {
+            openChildFrom( new frn_MainThongke());
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
