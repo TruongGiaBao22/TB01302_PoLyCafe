@@ -49,7 +49,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanPham.cs" />
     <Compile Include="TheLuuDong.cs" />
-    <Compile Include="ThongKeLSP.cs" />
+    <Compile Include="TKLoaiSP.cs" />
+    <Compile Include="TKNhanVien.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

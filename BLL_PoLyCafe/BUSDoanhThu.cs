@@ -12,9 +12,9 @@ namespace BLL_PoLyCafe
     {
         private DALDoanhThu dal = new DALDoanhThu();
 
-        public List<DoanhThu> LayDoanhThuTheoSanPham()
+        public List<DoanhThu> LayDoanhThuTheoNgay(DateTime tuNgay, DateTime denNgay)
         {
-            return dal.GetDoanhThuTheoSanPham();
+            return dal.LayDoanhThuTheoNgay(tuNgay, denNgay);
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnTKNV = new Guna.UI2.WinForms.Guna2Button();
             this.btnTKLSP = new Guna.UI2.WinForms.Guna2Button();
             this.btnTKSP = new Guna.UI2.WinForms.Guna2Button();
             this.pnMain = new Guna.UI2.WinForms.Guna2Panel();
@@ -38,6 +39,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Teal;
+            this.guna2Panel1.Controls.Add(this.btnTKNV);
             this.guna2Panel1.Controls.Add(this.btnTKLSP);
             this.guna2Panel1.Controls.Add(this.btnTKSP);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -45,6 +47,25 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1092, 29);
             this.guna2Panel1.TabIndex = 1;
+            // 
+            // btnTKNV
+            // 
+            this.btnTKNV.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTKNV.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTKNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTKNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTKNV.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnTKNV.FillColor = System.Drawing.Color.Teal;
+            this.btnTKNV.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTKNV.ForeColor = System.Drawing.Color.White;
+            this.btnTKNV.Image = global::GUI_PoLyCafe.Properties.Resources.team;
+            this.btnTKNV.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTKNV.Location = new System.Drawing.Point(728, 0);
+            this.btnTKNV.Name = "btnTKNV";
+            this.btnTKNV.Size = new System.Drawing.Size(364, 29);
+            this.btnTKNV.TabIndex = 2;
+            this.btnTKNV.Text = "Thống Kê Nhân Viên";
+            this.btnTKNV.Click += new System.EventHandler(this.btnTKNV_Click);
             // 
             // btnTKLSP
             // 
@@ -58,11 +79,12 @@
             this.btnTKLSP.ForeColor = System.Drawing.Color.White;
             this.btnTKLSP.Image = global::GUI_PoLyCafe.Properties.Resources.products;
             this.btnTKLSP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTKLSP.Location = new System.Drawing.Point(180, 0);
+            this.btnTKLSP.Location = new System.Drawing.Point(364, 0);
             this.btnTKLSP.Name = "btnTKLSP";
-            this.btnTKLSP.Size = new System.Drawing.Size(180, 29);
+            this.btnTKLSP.Size = new System.Drawing.Size(364, 29);
             this.btnTKLSP.TabIndex = 1;
-            this.btnTKLSP.Text = "TK Loại Sản Phẩm";
+            this.btnTKLSP.Text = "Thống Kê Loại Sản Phẩm";
+            this.btnTKLSP.Click += new System.EventHandler(this.btnTKLSP_Click);
             // 
             // btnTKSP
             // 
@@ -78,9 +100,9 @@
             this.btnTKSP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTKSP.Location = new System.Drawing.Point(0, 0);
             this.btnTKSP.Name = "btnTKSP";
-            this.btnTKSP.Size = new System.Drawing.Size(180, 29);
+            this.btnTKSP.Size = new System.Drawing.Size(364, 29);
             this.btnTKSP.TabIndex = 0;
-            this.btnTKSP.Text = "TK Sản Phẩm";
+            this.btnTKSP.Text = "Thống Kê Sản Phẩm";
             this.btnTKSP.Click += new System.EventHandler(this.btnTKSP_Click);
             // 
             // pnMain
@@ -111,5 +133,6 @@
         private Guna.UI2.WinForms.Guna2Button btnTKLSP;
         private Guna.UI2.WinForms.Guna2Button btnTKSP;
         private Guna.UI2.WinForms.Guna2Panel pnMain;
+        private Guna.UI2.WinForms.Guna2Button btnTKNV;
     }
 }

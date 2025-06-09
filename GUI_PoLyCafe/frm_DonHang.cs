@@ -96,9 +96,18 @@ namespace GUI_PoLyCafe
             {
                 drvDanhSachPBH.Columns.Add(buttonColumn);
             }
+            drvDanhSachPBH.Columns["MaPhieu"].HeaderText = "Mã Phiếu";
+            drvDanhSachPBH.Columns["MaThe"].HeaderText = "Mã Thẻ";
+            drvDanhSachPBH.Columns["ChuSoHuu"].HeaderText = "Chủ Sở Hữu";
+            drvDanhSachPBH.Columns["MaNhanVien"].HeaderText = "Mã Nhân Viên";
+            drvDanhSachPBH.Columns["HoTen"].HeaderText = "Họ Tên";
+            drvDanhSachPBH.Columns["NgayTao"].HeaderText = "Ngày Tạo";
+            drvDanhSachPBH.Columns["TrangThai"].HeaderText = "Trạng Thái";
+            drvDanhSachPBH.Columns["ThanhToan"].HeaderText = "Thanh Toán";
             drvDanhSachPBH.Columns["ThanhToan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             drvDanhSachPBH.ColumnHeadersHeight = 40;
             drvDanhSachPBH.RowTemplate.Height = 40;
+            drvDanhSachPBH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
             drvDanhSachPBH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }

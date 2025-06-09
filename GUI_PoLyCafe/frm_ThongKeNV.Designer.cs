@@ -1,6 +1,6 @@
 ﻿namespace GUI_PoLyCafe
 {
-    partial class frm_DoanhThu
+    partial class frm_ThongKeNV
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnThongKe = new Guna.UI2.WinForms.Guna2Button();
             this.dtpDenNgay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dtpTuNgay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2GroupBox1.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +56,7 @@
             this.guna2GroupBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(1076, 99);
-            this.guna2GroupBox1.TabIndex = 7;
+            this.guna2GroupBox1.TabIndex = 8;
             this.guna2GroupBox1.Text = "Thông Tin";
             // 
             // btnThongKe
@@ -128,45 +126,35 @@
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Từ Ngày";
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.chart1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 99);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1076, 433);
-            this.guna2Panel1.TabIndex = 8;
-            // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 0);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(0, 99);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1076, 433);
-            this.chart1.TabIndex = 0;
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(1076, 439);
+            this.chart1.TabIndex = 9;
             this.chart1.Text = "chart1";
             // 
-            // frm_DoanhThu
+            // frm_ThongKeNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1076, 532);
-            this.Controls.Add(this.guna2Panel1);
+            this.ClientSize = new System.Drawing.Size(1076, 538);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.guna2GroupBox1);
-            this.Name = "frm_DoanhThu";
-            this.Text = "frm_DoanhThu";
-            this.Load += new System.EventHandler(this.frm_DoanhThu_Load);
+            this.Name = "frm_ThongKeNV";
+            this.Text = "frm_ThongKeNV";
+            this.Load += new System.EventHandler(this.frm_ThongKeNV_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
@@ -180,7 +168,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTuNgay;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

@@ -161,9 +161,11 @@
     <Compile Include="DAL_PhieuBanHang.cs" />
     <Compile Include="DAL_SanPham.cs" />
     <Compile Include="DAL_TheLuuDong.cs" />
-    <Compile Include="DAL_ThongKeLSP.cs" />
+    <Compile Include="DAL_TKLoaiSP.cs" />
+    <Compile Include="DAL_TKNhanVIen.cs" />
     <Compile Include="DBUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TopNhanVien.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO_PoLyCafe\DTO_PoLyCafe.csproj">

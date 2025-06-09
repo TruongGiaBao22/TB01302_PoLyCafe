@@ -37,5 +37,15 @@ namespace GUI_PoLyCafe
         {
             openChildFrom(new frm_DoanhThu());
         }
+
+        private void btnTKNV_Click(object sender, EventArgs e)
+        {
+            openChildFrom( new frm_ThongKeNV());
+        }
+
+        private void btnTKLSP_Click(object sender, EventArgs e)
+        {
+            openChildFrom( new frm_TKLoaiSP());
+        }
     }
 }

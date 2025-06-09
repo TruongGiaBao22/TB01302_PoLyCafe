@@ -225,6 +225,7 @@ namespace GUI_PoLyCafe
                     MessageBox.Show("Đơn giá không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                string savedPath = ImageUtil.SaveImage(pbHinhAnh.Image, "Uploads/SanPham");
 
                 // Tạo đối tượng sản phẩm
                 SanPham sp = new SanPham

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO_PoLyCafe
 {
-    public class DoanhThu
+    public class TKNhanVien
     {
-        public string TenSanPham { get; set; }
-        public decimal TongTien { get; set; }
+        public string MaNhanVien { get; set; }
+        public string HoTen { get; set; }
         public int SoPhieu { get; set; }
     }
 }
