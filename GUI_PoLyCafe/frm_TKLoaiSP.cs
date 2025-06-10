@@ -88,6 +88,10 @@ namespace GUI_PoLyCafe
                 chartDoanhThu.Series.Add(series);
                 chartDoanhThu.Titles.Add("Biểu đồ doanh thu theo sản phẩm");
             }
+            dtpTuNgay.Format = DateTimePickerFormat.Custom;
+            dtpTuNgay.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            dtpDenNgay.Format = DateTimePickerFormat.Custom;
+            dtpDenNgay.CustomFormat = "dd/MM/yyyy HH:mm:ss";
         }
 
         private void frm_TKLoaiSP_Load(object sender, EventArgs e)
@@ -111,6 +115,18 @@ namespace GUI_PoLyCafe
             {
                 load();
             }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            DateTime today = DateTime.Today;
+            dtpTuNgay.Value = new DateTime(today.Year, today.Month, 1);
+            dtpTuNgay.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            dtpDenNgay.Value = DateTime.Now;
+            dtpDenNgay.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+
+            chartDoanhThu.Series.Clear();
+            chartDoanhThu.Titles.Clear();
         }
     }
 }

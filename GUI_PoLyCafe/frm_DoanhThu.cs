@@ -110,5 +110,17 @@ namespace GUI_PoLyCafe
             dtpTuNgay.Value = new DateTime(today.Year, today.Month, 1); // Đầu tháng hiện tại
             dtpDenNgay.Value = today; // Ngày hiện tại
         }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            DateTime today = DateTime.Today;
+            dtpTuNgay.Value = new DateTime(today.Year, today.Month, 1);
+            dtpTuNgay.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            dtpDenNgay.Value = DateTime.Now;
+            dtpDenNgay.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+
+            chart1.Series.Clear();
+            chart1.Titles.Clear();
+        }
     }
 }
