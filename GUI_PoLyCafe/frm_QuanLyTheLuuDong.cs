@@ -23,8 +23,10 @@ namespace GUI_PoLyCafe
         {
             btnThem.Enabled = true;
             btnSua.Enabled = false;
-            btnXoa.Enabled = true;
-            txtMaThe.Clear();
+            btnXoa.Enabled = false;
+
+            txtMaThe.Text = string.Empty; // Xóa nội dung dù đang khóa
+
             txtCSH.Clear();
             rdoDHD.Checked = true;
         }
@@ -32,6 +34,7 @@ namespace GUI_PoLyCafe
         private void frm_QuanLyTheLuuDong_Load(object sender, EventArgs e)
         {
             LoadTheLuuDong();
+            rdoDHD.Checked = true;
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -51,15 +54,6 @@ namespace GUI_PoLyCafe
             drvDanhSach.RowTemplate.Height = 40;
         }
 
-        
-
-        
-
-        private void btnLamMoi_Click(object sender, EventArgs e)
-        {
-            ClearForm();
-            LoadTheLuuDong();
-        }
 
 
         private void btnThem_Click_1(object sender, EventArgs e)
@@ -230,29 +224,39 @@ namespace GUI_PoLyCafe
 
         private void drvDanhSach_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row =drvDanhSach.Rows[e.RowIndex];
-
-            // Fill dữ liệu vào các TextBox
-            txtMaThe.Text = row.Cells["MaThe"].Value?.ToString();
-            txtCSH.Text = row.Cells["ChuSoHuu"].Value?.ToString();
-
-            // Xử lý trạng thái (giả sử giá trị là "Đang Hoạt Động" hoặc "Không Hoạt Động")
-            string trangThai = row.Cells["TrangThai"].Value?.ToString();
-
-            if (trangThai == "Đang Hoạt Động")
+            if (e.RowIndex >= 0)
             {
-                rdoDHD.Checked = true;
+                DataGridViewRow row = drvDanhSach.Rows[e.RowIndex];
+
+                // Fill TextBox
+                txtMaThe.Text = row.Cells["MaThe"].Value?.ToString();
+                txtCSH.Text = row.Cells["ChuSoHuu"].Value?.ToString();
+
+                // Xử lý trạng thái (dạng bool: True/False)
+                object cellValue = row.Cells["TrangThai"].Value;
+
+                if (cellValue is bool trangThai)
+                {
+                    rdoDHD.Checked = trangThai;
+                    rdoKHD.Checked = !trangThai;
+                }
+                else
+                {
+                    // Trường hợp fallback nếu kiểu dữ liệu không phải bool
+                    string strTrangThai = cellValue?.ToString()?.Trim().ToLower();
+
+                    if (strTrangThai == "đang hoạt động")
+                        rdoDHD.Checked = true;
+                    else if (strTrangThai == "không hoạt động")
+                        rdoKHD.Checked = true;
+                }
+
+                // Cập nhật trạng thái nút
+                btnThem.Enabled = false;
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+                txtMaThe.Enabled = false;
             }
-            else if (trangThai == "Không Hoạt Động")
-            {
-                rdoKHD.Checked = true;
-            }
-            // Bật nút "Sửa"
-            btnThem.Enabled = false;
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            // Tắt chỉnh sửa mã thẻ
-            txtMaThe.Enabled = false;
         }
     }
 }

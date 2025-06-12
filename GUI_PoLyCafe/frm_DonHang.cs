@@ -150,14 +150,31 @@ namespace GUI_PoLyCafe
 
         private void drvDanhSachPBH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            isLoadingTheLuuDongData = true;
-            DataGridViewRow row = drvDanhSachPBH.Rows[e.RowIndex];
-            cobMaThe.SelectedValue = row.Cells["MaThe"].Value.ToString();
-            cobNhanVien.SelectedValue = row.Cells["MaNhanVien"].Value.ToString();
-            dtpNgayTao.Text = row.Cells["NgayTao"].Value.ToString();
-            txtMaPhieu.Text = row.Cells["MaPhieu"].Value.ToString();
+            if (e.RowIndex < 0) return; // Bỏ qua nếu click tiêu đề
 
-            bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
+            isLoadingTheLuuDongData = true; // GIỮ nguyên
+
+            DataGridViewRow row = drvDanhSachPBH.Rows[e.RowIndex];
+
+            // Fill dữ liệu
+            cobMaThe.SelectedValue = row.Cells["MaThe"].Value?.ToString();
+            cobNhanVien.SelectedValue = row.Cells["MaNhanVien"].Value?.ToString();
+            dtpNgayTao.Text = row.Cells["NgayTao"].Value?.ToString();
+            txtMaPhieu.Text = row.Cells["MaPhieu"].Value?.ToString();
+
+            // --- Xử lý Trạng Thái ---
+            object cellValue = row.Cells["TrangThai"].Value;
+            bool trangThai = false;
+
+            if (cellValue != null && cellValue != DBNull.Value)
+            {
+                if (cellValue is bool)
+                    trangThai = (bool)cellValue;
+                else
+                    bool.TryParse(cellValue.ToString(), out trangThai);
+            }
+
+            // Giữ nguyên cấu trúc if-else như bạn yêu cầu
             if (trangThai)
             {
                 rdoDTT.Checked = true;
@@ -168,22 +185,20 @@ namespace GUI_PoLyCafe
                 btnThem.Enabled = false;
                 btnSua.Enabled = false;
                 btnXoa.Enabled = false;
-
             }
             else
             {
-                rdoDTT.Checked = false;
+                rdoDXT.Checked = true;
                 rdoDTT.Enabled = true;
                 rdoDXT.Enabled = true;
                 cobNhanVien.Enabled = true;
-                rdoDXT.Checked = true;
-                rdoDXT.Enabled = true;
                 dtpNgayTao.Enabled = true;
-                // Bật nút "Sửa"
                 btnThem.Enabled = false;
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
             }
+
+            isLoadingTheLuuDongData = false; // Nếu bạn dùng để ngăn sự kiện SelectedIndexChanged
         }
 
         private void btnThem_Click(object sender, EventArgs e)

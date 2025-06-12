@@ -34,11 +34,12 @@
             // 
             // guna2PictureBox1
             // 
+            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2PictureBox1.Image = global::GUI_PoLyCafe.Properties.Resources.Screenshot_2025_05_31_141245_removebg_preview;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(-1, 1);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(1097, 609);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(1098, 609);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
@@ -52,6 +53,7 @@
             this.Controls.Add(this.guna2PictureBox1);
             this.Name = "frm_MainTrangChu";
             this.Text = "frm_MainTrangChu";
+            this.Load += new System.EventHandler(this.frm_MainTrangChu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 

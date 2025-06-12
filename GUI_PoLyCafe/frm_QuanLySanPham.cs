@@ -235,6 +235,8 @@ namespace GUI_PoLyCafe
                     DonGia = donGia,
                     MaLoai = maLoai,
                     TrangThai = trangThai,
+                    HinhAnh = savedPath,
+
                 };
 
                 // Thêm sản phẩm vào cơ sở dữ liệu

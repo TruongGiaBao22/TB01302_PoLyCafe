@@ -16,5 +16,10 @@ namespace GUI_PoLyCafe
         {
             InitializeComponent();
         }
+
+        private void frm_MainTrangChu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

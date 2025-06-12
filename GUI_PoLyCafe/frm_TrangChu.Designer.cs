@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnMain = new System.Windows.Forms.Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnPhieuBanHang = new Guna.UI2.WinForms.Guna2Button();
             this.btnThongke = new Guna.UI2.WinForms.Guna2Button();
@@ -39,34 +37,12 @@
             this.btnSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.btnNhanVien = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.pnMain = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel1.SuspendLayout();
             this.pnMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnMain
-            // 
-            this.pnMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnMain.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnMain.Controls.Add(this.guna2PictureBox1);
-            this.pnMain.Location = new System.Drawing.Point(0, 62);
-            this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1114, 648);
-            this.pnMain.TabIndex = 1;
-            this.pnMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMain_Paint);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::GUI_PoLyCafe.Properties.Resources.Screenshot_2025_05_31_141245_removebg_preview;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(1108, 645);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 1;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // guna2Panel1
             // 
@@ -83,7 +59,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1114, 64);
-            this.guna2Panel1.TabIndex = 2;
+            this.guna2Panel1.TabIndex = 3;
             // 
             // btnPhieuBanHang
             // 
@@ -125,7 +101,7 @@
             this.btnThongke.Size = new System.Drawing.Size(119, 64);
             this.btnThongke.TabIndex = 6;
             this.btnThongke.Text = "Thống Kê";
-            this.btnThongke.Click += new System.EventHandler(this.btnThongke_Click);
+            this.btnThongke.Click += new System.EventHandler(this.btnThongke_Click_1);
             // 
             // btnDangXuat
             // 
@@ -167,7 +143,7 @@
             this.btnHeThong.Size = new System.Drawing.Size(126, 64);
             this.btnHeThong.TabIndex = 4;
             this.btnHeThong.Text = "Hệ Thống";
-            this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
+            this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click_1);
             // 
             // btnTLD
             // 
@@ -188,7 +164,7 @@
             this.btnTLD.Size = new System.Drawing.Size(159, 64);
             this.btnTLD.TabIndex = 3;
             this.btnTLD.Text = "Thẻ Lưu Động";
-            this.btnTLD.Click += new System.EventHandler(this.btnTLD_Click);
+            this.btnTLD.Click += new System.EventHandler(this.btnTLD_Click_1);
             // 
             // btnSanPham
             // 
@@ -209,7 +185,7 @@
             this.btnSanPham.Size = new System.Drawing.Size(126, 64);
             this.btnSanPham.TabIndex = 2;
             this.btnSanPham.Text = "Sản Phẩm";
-            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
+            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click_1);
             // 
             // btnNhanVien
             // 
@@ -230,7 +206,7 @@
             this.btnNhanVien.Size = new System.Drawing.Size(126, 64);
             this.btnNhanVien.TabIndex = 1;
             this.btnNhanVien.Text = "Nhân Viên ";
-            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click_1);
             // 
             // guna2Button1
             // 
@@ -251,36 +227,61 @@
             this.guna2Button1.Size = new System.Drawing.Size(126, 64);
             this.guna2Button1.TabIndex = 0;
             this.guna2Button1.Text = "Trang Chủ";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
+            // 
+            // pnMain
+            // 
+            this.pnMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnMain.Controls.Add(this.guna2PictureBox1);
+            this.pnMain.Location = new System.Drawing.Point(0, 64);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(1114, 647);
+            this.pnMain.TabIndex = 4;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2PictureBox1.Image = global::GUI_PoLyCafe.Properties.Resources.Screenshot_2025_05_31_141245_removebg_preview;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(1114, 647);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // frm_TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1114, 711);
-            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.pnMain);
+            this.Controls.Add(this.guna2Panel1);
             this.Name = "frm_TrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang Chủ";
+            this.guna2Panel1.ResumeLayout(false);
             this.pnMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnMain;
+
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnPhieuBanHang;
+        private Guna.UI2.WinForms.Guna2Button btnThongke;
         private Guna.UI2.WinForms.Guna2Button btnDangXuat;
         private Guna.UI2.WinForms.Guna2Button btnHeThong;
         private Guna.UI2.WinForms.Guna2Button btnTLD;
         private Guna.UI2.WinForms.Guna2Button btnSanPham;
         private Guna.UI2.WinForms.Guna2Button btnNhanVien;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Panel pnMain;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2Button btnThongke;
-        private Guna.UI2.WinForms.Guna2Button btnPhieuBanHang;
     }
 }

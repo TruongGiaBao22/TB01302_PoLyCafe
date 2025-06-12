@@ -104,20 +104,26 @@ namespace GUI_PoLyCafe
         {
             dtpTuNgay.Format = DateTimePickerFormat.Custom;
             dtpTuNgay.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+
             dtpDenNgay.Format = DateTimePickerFormat.Custom;
             dtpDenNgay.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            DateTime today = DateTime.Today;
-            dtpTuNgay.Value = new DateTime(today.Year, today.Month, 1); // Đầu tháng hiện tại
-            dtpDenNgay.Value = today; // Ngày hiện tại
+
+            DateTime now = DateTime.Now;
+            dtpTuNgay.Value = new DateTime(now.Year, now.Month, 1); // Đầu tháng
+            dtpDenNgay.Value = now; // Thời gian hiện tại (có giờ)
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            DateTime today = DateTime.Today;
-            dtpTuNgay.Value = new DateTime(today.Year, today.Month, 1);
+            dtpTuNgay.Format = DateTimePickerFormat.Custom;
             dtpTuNgay.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            dtpDenNgay.Value = DateTime.Now;
+
+            dtpDenNgay.Format = DateTimePickerFormat.Custom;
             dtpDenNgay.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+
+            DateTime now = DateTime.Now;
+            dtpTuNgay.Value = new DateTime(now.Year, now.Month, 1); // Đầu tháng
+            dtpDenNgay.Value = now; // Thời gian hiện tại (có giờ)
 
             chart1.Series.Clear();
             chart1.Titles.Clear();

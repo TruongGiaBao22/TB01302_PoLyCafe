@@ -17,13 +17,12 @@ namespace GUI_PoLyCafe
         {
             InitializeComponent();
             Checkpermission();
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.ControlBox = true;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
-        private void doiMatKhauToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_DoiMatKhau doimk = new frm_DoiMatKhau();
-            doimk.ShowDialog();
-        }
         private Form currentFromChill;
 
         private void openChildFrom(Form formChild)
@@ -41,16 +40,7 @@ namespace GUI_PoLyCafe
             formChild.BringToFront();
             formChild.Show();
         }
-
-        private void quanLyNhanVienToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildFrom(new frm_QuanLyNhanVien());
-        }
-
-        private void quanLyTheLuuDongToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildFrom( new frm_QuanLyTheLuuDong());
-        }
+       
         private void VaiTroNhanVien()
         {
             btnNhanVien.Visible = false;
@@ -87,49 +77,52 @@ namespace GUI_PoLyCafe
             }
         }
 
-        private void quanLySanPhamToolStripMenuItem_Click(object sender, EventArgs e)
+        
+
+
+
+        
+
+        
+
+
+
+
+
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
-            openChildFrom(new frm_QuanLySanPham());
+
         }
 
-        private void quanLyLoaiSanPhamToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildFrom( new frm_LoaiSanPham() );
-        }
-
-        private void pnMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnNhanVien_Click(object sender, EventArgs e)
-        {
-            openChildFrom(new frm_QuanLyNhanVien());
-        }
-
-        private void btnSanPham_Click(object sender, EventArgs e)
-        {
-            openChildFrom(new frm_MainSanPham());
-        }
-
-        private void btnTLD_Click(object sender, EventArgs e)
-        {
-            openChildFrom( new frm_QuanLyTheLuuDong() );
-        }
-
-        private void btnHeThong_Click(object sender, EventArgs e)
-        {
-            openChildFrom(new frm_MainHeThong());
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void guna2Button1_Click_1(object sender, EventArgs e)
         {
             openChildFrom(new frm_MainTrangChu());
         }
 
-        private void btnThongke_Click(object sender, EventArgs e)
+        private void btnNhanVien_Click_1(object sender, EventArgs e)
         {
-            openChildFrom( new frn_MainThongke());
+            openChildFrom(new frm_QuanLyNhanVien());
+        }
+
+        private void btnSanPham_Click_1(object sender, EventArgs e)
+        {
+            openChildFrom(new frm_MainSanPham());
+        }
+
+        private void btnTLD_Click_1(object sender, EventArgs e)
+        {
+            openChildFrom(new frm_QuanLyTheLuuDong());
+        }
+
+        private void btnHeThong_Click_1(object sender, EventArgs e)
+        {
+            openChildFrom(new frm_MainHeThong());
+        }
+
+        private void btnThongke_Click_1(object sender, EventArgs e)
+        {
+            openChildFrom(new frn_MainThongke());
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -151,7 +144,7 @@ namespace GUI_PoLyCafe
 
         private void btnPhieuBanHang_Click(object sender, EventArgs e)
         {
-            openChildFrom ( new frm_DonHang());
+            openChildFrom(new frm_DonHang());
         }
     }
 }

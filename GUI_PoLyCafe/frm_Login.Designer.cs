@@ -138,7 +138,7 @@
             this.txtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMatKhau.Location = new System.Drawing.Point(623, 220);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.PasswordChar = '\0';
+            this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.PlaceholderText = "";
             this.txtMatKhau.SelectedText = "";
             this.txtMatKhau.Size = new System.Drawing.Size(266, 28);
